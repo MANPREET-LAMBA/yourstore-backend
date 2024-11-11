@@ -19,6 +19,7 @@ const createuser = async(req,res)=>{
         email: email
    }
    const token = jwt.sign(payload, process.env.PRIVATEKEY);
+   //test
 
     bcrypt.genSalt(10, function(err, salt) {
         bcrypt.hash(myPlaintextPassword, salt, async function(err, hash) {
