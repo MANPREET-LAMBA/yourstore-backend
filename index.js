@@ -19,7 +19,7 @@ const port=3000
   
 
 
-app.listen( 3000,()=>{console.log("port 4000")});
+app.listen( port,()=>{console.log("port 4000")});
 
 //db connection 
 const dbconnection = require("./connection/database")
