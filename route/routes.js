@@ -41,9 +41,6 @@ storeroute.post("/carthandler", cart)
 const fetchCardData= require("../controller/fetchcart")
 storeroute.post("/fetchCardData", fetchCardData);
 
-const databyid = require("../controller/iddata");
-
-storeroute.post("/databyid", databyid);
 
 
 module.exports = storeroute;
