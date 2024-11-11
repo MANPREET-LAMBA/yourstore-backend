@@ -49,10 +49,18 @@ console.log( productname, dircription, price, category)
 
    try {
       await model.create({ id: time, productname, dircription, price, category, image: response.url });
+      res.send({
+         success : true
+      })
 
    } catch (error) {
       console.log(error)
+      res.send({
+         success : false
+      })
    }
+
+
 }
 
 module.exports = dataToDB; 

@@ -32,6 +32,18 @@ const search = require("../controller/searchquery");
 storeroute.get("/searchquery",search);
 
 
+const searchone = require("../controller/searchone");
+storeroute.get("/searchone", searchone)
+
+const cart = require("../controller/addtocart")
+storeroute.post("/carthandler", cart)
+
+const fetchCardData= require("../controller/fetchcart")
+storeroute.post("/fetchCardData", fetchCardData);
+
+const databyid = require("../controller/iddata");
+
+storeroute.post("/databyid", databyid);
 
 
 module.exports = storeroute;
