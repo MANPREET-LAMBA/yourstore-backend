@@ -3,18 +3,26 @@ const usermodel = require("../model/sign_schema");
 async function addtocart(req,res){
 console.log(req.body);
 const id = req.body.id;
+const user = req.body.user;
 
-const user = await usermodel.findOne({username:req.body.user});
+
 console.log("ndcnnadnn----");
 
-console.log(user);
 
-await user.cartIteam.push({id})
-await user.save();
-console.log(user);
+const pushData = async(id)=>{
+    const dbuser= await usermodel.findOne({username : user})
+    
+    console.log(user);
+    dbuser.cartIteam.push({id})
+   await dbuser.save();
+   res.send(dbuser);
+}
+await pushData(id);
+
+// console.log(user);
 
 
-res.send(user);
+
 
 }
 
